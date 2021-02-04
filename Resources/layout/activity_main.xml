@@ -1,67 +1,62 @@
-
+<?xml version="1.0" encoding="utf-8"?>
 <GridLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:minWidth="25px"
     android:minHeight="25px"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:columnCount="4"
     android:rowCount="9"
-    android:id="@+id/gridLayout12">
-    <TextView
-        android:text="SpO2 1"
-        android:id="@+id/textView457231"
-        android:layout_columnWeight="2"
-        android:layout_rowWeight="1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_columnSpan="2"
-        android:textSize="20dp"/>
-    <RadioButton
-        android:id="@+id/radioButton28751"
-        android:layout_columnWeight="1"
-        android:layout_rowWeight="1"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:layout_gravity="right" />
-    <EditText
-        android:inputType="number"
-        android:id="@+id/editText53451"
-        android:layout_columnWeight="1"
-        android:layout_rowWeight="1"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content" />
+    android:id="@+id/gridLayout12"
+    tools:gridSpec="1|8|#0093eeff|K:#ee8700ff:16,l:72,l:16,r|S:#83ee00ff:16,0,l:16,0,r">
 
 
     <TextView
-        android:text="SpO2 2"
-        android:id="@+id/textView234534"
+        android:text="SpO2"
+        android:id="@+id/TextviewSpO2"
         android:layout_columnWeight="2"
         android:layout_rowWeight="1"
         android:layout_row="1"
         android:layout_column="0"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:layout_columnSpan="2"
-        android:textSize="20dp"/>
-    <RadioButton
-        android:id="@+id/spo2_2"
-        android:layout_columnWeight="1"
-        android:layout_rowWeight="1"
         android:layout_columnSpan="1"
-        android:layout_gravity="right"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content" />
+        android:textSize="20dp"
+        android:layout_gravity="center_vertical" />
+    <RadioGroup
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:id="@+id/radioGroup1"
+        android:layout_gravity="center_vertical"
+        android:layout_columnSpan="2"
+        android:layout_marginRight="35dp">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Sp02 scale 1"
+            android:id="@+id/RadioSpo2_1"
+            android:layout_columnSpan="1"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sp02 scale 2"
+            android:id="@+id/RadioSpo2_2"
+            android:layout_columnSpan="1"/>
+    </RadioGroup>
+
     <EditText
         android:inputType="number"
-        android:id="@+id/editText112323"
+        android:id="@+id/TextEditSpo2"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content" />
+        android:maxWidth="50dp"
+        android:width="100dp" />
     <TextView
         android:text="Pulse"
-        android:id="@+id/textView2123534"
+        android:id="@+id/textViewPulse"
         android:layout_columnWeight="3"
         android:layout_rowWeight="1"
         android:layout_row="2"
@@ -69,17 +64,18 @@
         android:layout_columnSpan="3"
         android:textSize="20dp"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content" />
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_vertical" />
     <EditText
         android:inputType="number"
-        android:id="@+id/editText1543254"
+        android:id="@+id/TextEditPulse"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content" />
+        android:maxWidth="50dp" />
     <TextView
         android:text="Blood pressure"
-        android:id="@+id/textView253425"
+        android:id="@+id/textViewBP"
         android:layout_columnWeight="3"
         android:layout_rowWeight="1"
         android:layout_row="3"
@@ -87,17 +83,18 @@
         android:layout_columnSpan="3"
         android:textSize="20dp"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content" />
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_vertical" />
     <EditText
         android:inputType="number"
-        android:id="@+id/editText132453245"
+        android:id="@+id/TextEditBP"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content" />
+        android:maxWidth="50dp" />
     <TextView
         android:text="Tempereture"
-        android:id="@+id/textView2345234"
+        android:id="@+id/textViewTempereture"
         android:layout_columnWeight="3"
         android:layout_rowWeight="1"
         android:layout_row="4"
@@ -105,18 +102,19 @@
         android:layout_columnSpan="3"
         android:textSize="20dp"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content" />
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_vertical" />
     <EditText
         android:inputType="number"
-        android:id="@+id/editText123432"
+        android:id="@+id/TextEditTempereture"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:maxWidth="50dp" />
 
     <TextView
         android:text="Respiration rate"
-        android:id="@+id/textView24321"
+        android:id="@+id/textViewRespiration"
         android:layout_columnWeight="3"
         android:layout_rowWeight="1"
         android:layout_row="5"
@@ -124,74 +122,91 @@
         android:layout_columnSpan="3"
         android:textSize="20dp"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content" />
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_vertical" />
     <EditText
         android:inputType="number"
-        android:id="@+id/editText1765464"
+        android:id="@+id/TextEditRespiration"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content" />
+        android:layout_width="wrap_content"
+        android:maxWidth="50dp" />
 
-    <RadioButton
-        android:text="Air"
-        android:id="@+id/radioButton2454"
-        android:layout_columnSpan="2"
-        android:layout_columnWeight="2"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        android:textSize="20dp"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content" />
-    <RadioButton
-        android:text="Oxygen"
-        android:id="@+id/radioButton3454"
-        android:layout_columnSpan="2"
-        android:layout_columnWeight="2"
-        android:layout_gravity="center"
-        android:layout_marginRight="50dp"
-        android:layout_marginLeft="50dp"
-        android:textSize="20dp"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content" />
-    <RadioButton
-        android:text="Alert"
-        android:id="@+id/radioButton2443"
-        android:layout_columnSpan="2"
-        android:layout_columnWeight="2"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        android:textSize="20dp"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content" />
-    <RadioButton
-        android:text="CVPU"
-        android:id="@+id/radioButton3433"
-        android:layout_columnSpan="2"
-        android:layout_columnWeight="2"
-        android:layout_gravity="center"
-        android:layout_marginRight="50dp"
-        android:layout_marginLeft="35dp"
-        android:textSize="20dp"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content" />
+    <RadioGroup
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:id="@+id/radioGroup3"
+        android:orientation="horizontal"
+        android:layout_columnSpan="4"
+        android:layout_gravity="center">
+        <RadioButton
+            android:text="Air"
+            android:id="@+id/RadioAir_Air"
+            android:layout_columnSpan="2"
+            android:layout_columnWeight="2"
+            android:textSize="20dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"/>
+        <RadioButton
+            android:text="Oxygen"
+            android:id="@+id/RadioAir_Oxygen"
+            android:layout_columnSpan="2"
+            android:layout_columnWeight="2"
+            android:textSize="20dp"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_gravity="right" />
+    </RadioGroup>
+
+
+
+    <RadioGroup
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:id="@+id/radioGroup2"
+        android:layout_columnSpan="4"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+        <RadioButton
+            android:text="Alert"
+            android:id="@+id/RadioAlert_Alert"
+            android:layout_columnSpan="2"
+            android:layout_columnWeight="2"
+            android:textSize="20dp"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+        <RadioButton
+            android:text="CVPU"
+            android:id="@+id/RadioAlert_CVPU"
+            android:layout_columnSpan="2"
+            android:layout_columnWeight="2"
+            android:layout_gravity="right"
+            android:textSize="20dp"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+    </RadioGroup>
+
+
+
 
     <Button
         android:text="Refresh"
-        android:id="@+id/button1454"
+        android:id="@+id/buttonRefresh"
         android:layout_columnSpan="2"
         android:layout_columnWeight="2"
         android:layout_marginLeft="100dp"
-        android:layout_gravity="right"
+        android:layout_gravity="center"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content" />
     <Button
         android:text="submit"
-        android:id="@+id/button2342"
+        android:id="@+id/buttonSubmit"
         android:layout_columnWeight="1"
         android:layout_columnSpan="1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="right" />
+        android:layout_gravity="center" />
 
 </GridLayout>
