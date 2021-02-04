@@ -1,0 +1,197 @@
+
+<GridLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="4"
+    android:rowCount="9"
+    android:id="@+id/gridLayout12">
+    <TextView
+        android:text="SpO2 1"
+        android:id="@+id/textView457231"
+        android:layout_columnWeight="2"
+        android:layout_rowWeight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_columnSpan="2"
+        android:textSize="20dp"/>
+    <RadioButton
+        android:id="@+id/radioButton28751"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_gravity="right" />
+    <EditText
+        android:inputType="number"
+        android:id="@+id/editText53451"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content" />
+
+
+    <TextView
+        android:text="SpO2 2"
+        android:id="@+id/textView234534"
+        android:layout_columnWeight="2"
+        android:layout_rowWeight="1"
+        android:layout_row="1"
+        android:layout_column="0"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_columnSpan="2"
+        android:textSize="20dp"/>
+    <RadioButton
+        android:id="@+id/spo2_2"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_columnSpan="1"
+        android:layout_gravity="right"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content" />
+    <EditText
+        android:inputType="number"
+        android:id="@+id/editText112323"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content" />
+    <TextView
+        android:text="Pulse"
+        android:id="@+id/textView2123534"
+        android:layout_columnWeight="3"
+        android:layout_rowWeight="1"
+        android:layout_row="2"
+        android:layout_column="0"
+        android:layout_columnSpan="3"
+        android:textSize="20dp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content" />
+    <EditText
+        android:inputType="number"
+        android:id="@+id/editText1543254"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content" />
+    <TextView
+        android:text="Blood pressure"
+        android:id="@+id/textView253425"
+        android:layout_columnWeight="3"
+        android:layout_rowWeight="1"
+        android:layout_row="3"
+        android:layout_column="0"
+        android:layout_columnSpan="3"
+        android:textSize="20dp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content" />
+    <EditText
+        android:inputType="number"
+        android:id="@+id/editText132453245"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content" />
+    <TextView
+        android:text="Tempereture"
+        android:id="@+id/textView2345234"
+        android:layout_columnWeight="3"
+        android:layout_rowWeight="1"
+        android:layout_row="4"
+        android:layout_column="0"
+        android:layout_columnSpan="3"
+        android:textSize="20dp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content" />
+    <EditText
+        android:inputType="number"
+        android:id="@+id/editText123432"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:text="Respiration rate"
+        android:id="@+id/textView24321"
+        android:layout_columnWeight="3"
+        android:layout_rowWeight="1"
+        android:layout_row="5"
+        android:layout_column="0"
+        android:layout_columnSpan="3"
+        android:textSize="20dp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content" />
+    <EditText
+        android:inputType="number"
+        android:id="@+id/editText1765464"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content" />
+
+    <RadioButton
+        android:text="Air"
+        android:id="@+id/radioButton2454"
+        android:layout_columnSpan="2"
+        android:layout_columnWeight="2"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:textSize="20dp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content" />
+    <RadioButton
+        android:text="Oxygen"
+        android:id="@+id/radioButton3454"
+        android:layout_columnSpan="2"
+        android:layout_columnWeight="2"
+        android:layout_gravity="center"
+        android:layout_marginRight="50dp"
+        android:layout_marginLeft="50dp"
+        android:textSize="20dp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content" />
+    <RadioButton
+        android:text="Alert"
+        android:id="@+id/radioButton2443"
+        android:layout_columnSpan="2"
+        android:layout_columnWeight="2"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:textSize="20dp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content" />
+    <RadioButton
+        android:text="CVPU"
+        android:id="@+id/radioButton3433"
+        android:layout_columnSpan="2"
+        android:layout_columnWeight="2"
+        android:layout_gravity="center"
+        android:layout_marginRight="50dp"
+        android:layout_marginLeft="35dp"
+        android:textSize="20dp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content" />
+
+    <Button
+        android:text="Refresh"
+        android:id="@+id/button1454"
+        android:layout_columnSpan="2"
+        android:layout_columnWeight="2"
+        android:layout_marginLeft="100dp"
+        android:layout_gravity="right"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content" />
+    <Button
+        android:text="submit"
+        android:id="@+id/button2342"
+        android:layout_columnWeight="1"
+        android:layout_columnSpan="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right" />
+
+</GridLayout>
