@@ -3601,13 +3601,13 @@ namespace NEWS
 			public const int RadioAlert_CVPU = 2131230727;
 			
 			// aapt resource value: 0x7F080085
-			public const int radioGroup1 = 2131230853;
+			public const int radioGroupAir = 2131230853;
 			
 			// aapt resource value: 0x7F080086
-			public const int radioGroup2 = 2131230854;
+			public const int radioGroupConsciousness = 2131230854;
 			
 			// aapt resource value: 0x7F080087
-			public const int radioGroup3 = 2131230855;
+			public const int radioGroupSpo2 = 2131230855;
 			
 			// aapt resource value: 0x7F080008
 			public const int RadioSpo2_1 = 2131230728;

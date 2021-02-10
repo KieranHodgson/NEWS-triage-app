@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+
 <GridLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -10,6 +10,7 @@
     android:rowCount="9"
     android:id="@+id/gridLayout12"
     tools:gridSpec="1|8|#0093eeff|K:#ee8700ff:16,l:72,l:16,r|S:#83ee00ff:16,0,l:16,0,r">
+
 
 
     <TextView
@@ -27,7 +28,7 @@
     <RadioGroup
         android:minWidth="25px"
         android:minHeight="25px"
-        android:id="@+id/radioGroup1"
+        android:id="@+id/radioGroupSpo2"
         android:layout_gravity="center_vertical"
         android:layout_columnSpan="2"
         android:layout_marginRight="35dp">
@@ -53,7 +54,8 @@
         android:layout_rowWeight="1"
         android:layout_height="wrap_content"
         android:maxWidth="50dp"
-        android:width="100dp" />
+        android:width="100dp"
+        android:text="99" />
     <TextView
         android:text="Pulse"
         android:id="@+id/textViewPulse"
@@ -72,7 +74,8 @@
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
         android:layout_height="wrap_content"
-        android:maxWidth="50dp" />
+        android:maxWidth="50dp"
+        android:text="60" />
     <TextView
         android:text="Blood pressure"
         android:id="@+id/textViewBP"
@@ -91,7 +94,8 @@
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
         android:layout_height="wrap_content"
-        android:maxWidth="50dp" />
+        android:maxWidth="50dp"
+        android:text="120" />
     <TextView
         android:text="Tempereture"
         android:id="@+id/textViewTempereture"
@@ -105,13 +109,13 @@
         android:layout_width="wrap_content"
         android:layout_gravity="center_vertical" />
     <EditText
-        android:inputType="number"
+        android:inputType="none|numberDecimal"
         android:id="@+id/TextEditTempereture"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
         android:layout_height="wrap_content"
-        android:maxWidth="50dp" />
-
+        android:maxWidth="50dp"
+        android:text="37.5" />
     <TextView
         android:text="Respiration rate"
         android:id="@+id/textViewRespiration"
@@ -131,12 +135,13 @@
         android:layout_rowWeight="1"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:maxWidth="50dp" />
+        android:maxWidth="50dp"
+        android:text="15" />
 
     <RadioGroup
         android:minWidth="25px"
         android:minHeight="25px"
-        android:id="@+id/radioGroup3"
+        android:id="@+id/radioGroupAir"
         android:orientation="horizontal"
         android:layout_columnSpan="4"
         android:layout_gravity="center">
@@ -146,6 +151,7 @@
             android:layout_columnSpan="2"
             android:layout_columnWeight="2"
             android:textSize="20dp"
+            android:checked="true"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_width="wrap_content"/>
@@ -165,7 +171,7 @@
     <RadioGroup
         android:minWidth="25px"
         android:minHeight="25px"
-        android:id="@+id/radioGroup2"
+        android:id="@+id/radioGroupConsciousness"
         android:layout_columnSpan="4"
         android:orientation="horizontal"
         android:layout_gravity="center">
@@ -175,6 +181,7 @@
             android:layout_columnSpan="2"
             android:layout_columnWeight="2"
             android:textSize="20dp"
+            android:checked="true"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"/>
         <RadioButton
@@ -199,7 +206,8 @@
         android:layout_marginLeft="100dp"
         android:layout_gravity="center"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content" />
+        android:layout_width="wrap_content"
+        android:layout_marginBottom="100dp" />
     <Button
         android:text="submit"
         android:id="@+id/buttonSubmit"
@@ -207,6 +215,9 @@
         android:layout_columnSpan="1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:onClick="SubmitClicked"
+        android:ellipsize="start"
+        android:layout_marginBottom="100dp" />
 
 </GridLayout>
