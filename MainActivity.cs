@@ -5,24 +5,43 @@ using Android.Support.Design.Widget;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
+using Android.Content.Res;
 using System;
+using System.IO;
+using System.Collections.Generic;
 
 namespace NEWS
 {
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {   
-        
         Button buttonSubmit, buttonRefresh; //initiate submit button
         RadioButton RadioSpo2_1, RadioSpo2_2, RadioAir_Air, RadioAir_Oxygen, RadioAlert_Alert, RadioAlert_CVPU;
-
+        spo2scale Spo2Scale = spo2scale.spo2_1;
+        breathing Breathing = breathing.air;
+        conscious Conscious = conscious.alert;
+        enum spo2scale //spo2 scale option 
+        {
+            spo2_1,
+            spo2_2
+        }
+        enum breathing //breathing status: breathing air or supplementary oxygen
+        {
+            air,
+            oxygen
+        }
+        enum conscious //consciousness level
+        {
+            alert,
+            CVPU
+        }
 
         protected override void OnCreate(Bundle savedInstanceState) //run on startup.
         {
             base.OnCreate(savedInstanceState);
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
-
+            
             RadioSpo2_1 = FindViewById<RadioButton>(Resource.Id.RadioSpo2_1);
             RadioSpo2_2 = FindViewById<RadioButton>(Resource.Id.RadioSpo2_2);
 
@@ -65,26 +84,8 @@ namespace NEWS
 
             buttonRefresh = FindViewById<Button>(Resource.Id.buttonRefresh);
             buttonRefresh.Click += RefreshClicked;
-            
         }
 
-        
-
-        enum spo2scale //spo2 scale option 
-        {
-            spo2_1,
-            spo2_2
-        }
-        enum breathing //breathing status: breathing air or supplementary oxygen
-        {
-            air,
-            oxygen
-        }
-        enum conscious //consciousness level
-        {
-            alert,
-            CVPU
-        }
         public static class ToastNotification
         {
             public static void TostMessage(string message)
@@ -96,17 +97,50 @@ namespace NEWS
                 Toast.MakeText(context, tostMessage, durtion).Show();
             }
         }
-        spo2scale Spo2Scale = spo2scale.spo2_1;
-        breathing Breathing = breathing.air;
-        conscious Conscious = conscious.alert;
-
+        //<summary> 
 
         private void RefreshClicked(object sender, EventArgs e)
         {
-            
+            EimoExtract();
+
         }
+        private void EimoExtract ()
+        {
+            char[] charsToTrim = {'\"', '{'};
+            string rawContent;
+            AssetManager assets = this.Assets;
+            using (StreamReader sr = new StreamReader(assets.Open("example.csv")))
+            {
+                rawContent = sr.ReadToEnd();
+            }
+            string[] contentSplitData = rawContent.Split("\"Data\":");
+            string data = contentSplitData[1];
+            contentSplitData[0].Replace("\"", string.Empty);
+            string contentString = string.Join("", contentSplitData[0].Split(charsToTrim));
+            string[] content = contentString.Split("\n");
+            string 
+                spo2_ = content[17], 
+                pulse_ = content[10], 
+                bp_ = content[19], 
+                tempereture_ = content[8];
 
+            spo2_ = spo2_.Substring(spo2_.IndexOf(":") + 1);
+            spo2_ = spo2_.Trim(',', ' ');
 
+            pulse_ = pulse_.Substring(pulse_.IndexOf(":") + 1);
+            pulse_ = pulse_.Trim(',', ' ');
+
+            bp_ = bp_.Substring(bp_.IndexOf(":") + 1);
+            bp_ = bp_.Trim(',', ' ');
+
+            tempereture_ = tempereture_.Substring(tempereture_.IndexOf(":") + 1);
+            tempereture_ = tempereture_.Trim(',', ' ');
+
+            FindViewById<EditText>(Resource.Id.TextEditSpo2).Text = spo2_;
+            FindViewById<EditText>(Resource.Id.TextEditPulse).Text = pulse_;
+            FindViewById<EditText>(Resource.Id.TextEditBP).Text = bp_;
+            FindViewById<EditText>(Resource.Id.TextEditTempereture).Text = tempereture_;
+        }
         private void SubmitClicked(object sender, EventArgs e)
         {
             string spo2 = FindViewById<TextView>(Resource.Id.TextEditSpo2).Text;
@@ -116,7 +150,7 @@ namespace NEWS
             string respiration = FindViewById<TextView>(Resource.Id.TextEditRespiration).Text;
             try
             {
-                newscalc(int.Parse(spo2), int.Parse(pulse), int.Parse(bp), float.Parse(tempereture), int.Parse(respiration), Spo2Scale, Breathing, Conscious);
+                NewsCalc(int.Parse(spo2), int.Parse(pulse), int.Parse(bp), float.Parse(tempereture), int.Parse(respiration), Spo2Scale, Breathing, Conscious);
             }
             catch
             {
@@ -124,7 +158,7 @@ namespace NEWS
             }
         }
 
-        private void newscalc(int spo2, int pulse, int bp, float tempereture, int respiration, spo2scale spo2Scale, breathing breathing, conscious conscious)
+        private void NewsCalc(int spo2, int pulse, int bp, float tempereture, int respiration, spo2scale spo2Scale, breathing breathing, conscious conscious)
         {
             uint respirationScore = 0;
             uint spo2Score = 0;
@@ -389,15 +423,11 @@ namespace NEWS
             }
         }
 
-
-
-
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
-
     }
 }
 
