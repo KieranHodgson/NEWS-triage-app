@@ -247,15 +247,20 @@ namespace NEWS
                 tempereture_ = content[8];
 
             spo2_ = spo2_.Substring(spo2_.IndexOf(":") + 1);
+            spo2_ = spo2_.Trim('\r', ' ');
             spo2_ = spo2_.Trim(',', ' ');
 
+
             pulse_ = pulse_.Substring(pulse_.IndexOf(":") + 1);
+            pulse_ = pulse_.Trim('\r', ' ');
             pulse_ = pulse_.Trim(',', ' ');
 
             bp_ = bp_.Substring(bp_.IndexOf(":") + 1);
+            bp_ = bp_.Trim('\r', ' ');
             bp_ = bp_.Trim(',', ' ');
 
             tempereture_ = tempereture_.Substring(tempereture_.IndexOf(":") + 1);
+            tempereture_ = tempereture_.Trim('\r', ' ');
             tempereture_ = tempereture_.Trim(',', ' ');
 
             FindViewById<EditText>(Resource.Id.TextEditSpo2).Text = spo2_;
