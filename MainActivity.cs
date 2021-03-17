@@ -29,6 +29,8 @@ namespace NEWS
         LinearLayout scoreMain;
         GridLayout inputMain;
 
+        uint aggregateScore;
+
         string PatientID = "";
         enum spo2scale //spo2 scale option 
         {
@@ -506,7 +508,7 @@ namespace NEWS
             }                   //score: 2
 
 
-            uint aggregateScore = respirationScore + spo2Score + oxygenScore + bpScore + pulseScore + consciousnessScore + temperetureScore;
+            aggregateScore = respirationScore + spo2Score + oxygenScore + bpScore + pulseScore + consciousnessScore + temperetureScore;
 
             scoreScore.Text = "Score: " + aggregateScore.ToString();
 
@@ -554,7 +556,8 @@ namespace NEWS
                            ,bp
                            ,pulse
                            ,conscious
-                           ,tempereture)
+                           ,tempereture
+                           ,score)
                      VALUES
                            (@patientID
                            ,@datetime
@@ -565,7 +568,8 @@ namespace NEWS
                            ,@bp
                            ,@pulse
                            ,@conscious
-                           ,@tempereture)
+                           ,@tempereture
+                           ,@score)
                 ";
             try
             {
@@ -581,7 +585,7 @@ namespace NEWS
                 cmd.Parameters.AddWithValue("@bp", bp);
                 cmd.Parameters.AddWithValue("@pulse", pulse);
                 cmd.Parameters.AddWithValue("@tempereture", tempereture);
-
+                cmd.Parameters.AddWithValue("@score", (int)aggregateScore);
                 if (conscious == conscious.alert)
                     cmd.Parameters.AddWithValue("@conscious", "ALERT");
                 else
